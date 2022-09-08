@@ -1,3 +1,5 @@
+* Updated key handling in MultiContextProvider
+
 ## v0.1.1 (2022-09-08)
 * Removed force methods
 

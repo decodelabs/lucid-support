@@ -22,7 +22,7 @@ use Exception;
 trait MultiContextProviderTrait
 {
     public function make(
-        string $key,
+        int|string $key,
         string $type,
         array|Closure|null $setup = null
     ): mixed {
@@ -30,7 +30,7 @@ trait MultiContextProviderTrait
     }
 
     public function validate(
-        string $key,
+        int|string $key,
         string $type,
         array|Closure|null $setup = null
     ): Result {
@@ -38,7 +38,7 @@ trait MultiContextProviderTrait
     }
 
     public function is(
-        string $key,
+        int|string $key,
         string $type,
         array|Closure|null $setup = null
     ): bool {
@@ -51,8 +51,9 @@ trait MultiContextProviderTrait
         }
     }
 
-    public function sanitize(string $key): Sanitizer
-    {
+    public function sanitize(
+        int|string $key
+    ): Sanitizer {
         if (!class_exists(Sanitizer::class)) {
             throw Exceptional::ComponentUnavailable(
                 'DecodeLabs/Lucid package is required for sanitisation'
@@ -65,5 +66,7 @@ trait MultiContextProviderTrait
     /**
      * @phpstan-return TValue|null
      */
-    abstract protected function getValue(string $key): mixed;
+    abstract protected function getValue(
+        int|string $key
+    ): mixed;
 }

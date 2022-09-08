@@ -22,7 +22,7 @@ interface MultiContextProvider
      * @param array<string, mixed>|Closure|null $setup
      */
     public function make(
-        string $key,
+        int|string $key,
         string $type,
         array|Closure|null $setup = null
     ): mixed;
@@ -32,7 +32,7 @@ interface MultiContextProvider
      * @return Result<mixed>
      */
     public function validate(
-        string $key,
+        int|string $key,
         string $type,
         array|Closure|null $setup = null
     ): Result;
@@ -41,7 +41,7 @@ interface MultiContextProvider
      * @param array<string, mixed>|Closure|null $setup
      */
     public function is(
-        string $key,
+        int|string $key,
         string $type,
         array|Closure|null $setup = null
     ): bool;
@@ -49,5 +49,7 @@ interface MultiContextProvider
     /**
      * @phpstan-return Sanitizer<TValue>
      */
-    public function sanitize(string $key): Sanitizer;
+    public function sanitize(
+        int|string $key
+    ): Sanitizer;
 }
