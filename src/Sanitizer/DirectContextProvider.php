@@ -33,17 +33,6 @@ interface DirectContextProvider
      * @template TInput
      * @phpstan-param TInput $value
      * @param array<string, mixed>|Closure|null $setup
-     */
-    public function force(
-        mixed $value,
-        string $type,
-        array|Closure|null $setup = null
-    ): mixed;
-
-    /**
-     * @template TInput
-     * @phpstan-param TInput $value
-     * @param array<string, mixed>|Closure|null $setup
      * @return Result<mixed>
      */
     public function validate(

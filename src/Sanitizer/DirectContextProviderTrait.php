@@ -29,14 +29,6 @@ trait DirectContextProviderTrait
         return $this->sanitize($value)->as($type, $setup);
     }
 
-    public function force(
-        mixed $value,
-        string $type,
-        array|Closure|null $setup = null
-    ): mixed {
-        return $this->sanitize($value)->forceAs($type, $setup);
-    }
-
     public function validate(
         mixed $value,
         string $type,

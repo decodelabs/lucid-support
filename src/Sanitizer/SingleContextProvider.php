@@ -28,14 +28,6 @@ interface SingleContextProvider
 
     /**
      * @param array<string, mixed>|Closure|null $setup
-     */
-    public function forceAs(
-        string $type,
-        array|Closure|null $setup = null
-    ): mixed;
-
-    /**
-     * @param array<string, mixed>|Closure|null $setup
      * @return Result<mixed>
      */
     public function validate(
