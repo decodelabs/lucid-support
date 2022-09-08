@@ -1,3 +1,5 @@
+* Updated getChildValues() return signature
+
 ## v0.2.1 (2022-09-08)
 * Removed __construct() from sanitizer interface
 
