@@ -29,15 +29,6 @@ interface MultiContextProvider
 
     /**
      * @param array<string, mixed>|Closure|null $setup
-     */
-    public function force(
-        string $key,
-        string $type,
-        array|Closure|null $setup = null
-    ): mixed;
-
-    /**
-     * @param array<string, mixed>|Closure|null $setup
      * @return Result<mixed>
      */
     public function validate(

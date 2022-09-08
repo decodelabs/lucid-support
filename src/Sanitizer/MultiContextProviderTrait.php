@@ -29,14 +29,6 @@ trait MultiContextProviderTrait
         return $this->sanitize($key)->as($type, $setup);
     }
 
-    public function force(
-        string $key,
-        string $type,
-        array|Closure|null $setup = null
-    ): mixed {
-        return $this->sanitize($key)->forceAs($type, $setup);
-    }
-
     public function validate(
         string $key,
         string $type,

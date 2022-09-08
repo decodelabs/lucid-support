@@ -28,13 +28,6 @@ trait SingleContextProviderTrait
         return $this->sanitize()->as($type, $setup);
     }
 
-    public function forceAs(
-        string $type,
-        array|Closure|null $setup = null
-    ): mixed {
-        return $this->sanitize()->forceAs($type, $setup);
-    }
-
     public function validate(
         string $type,
         array|Closure|null $setup = null
