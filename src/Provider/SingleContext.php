@@ -7,22 +7,22 @@
 
 declare(strict_types=1);
 
-namespace DecodeLabs\Lucid\Sanitizer;
+namespace DecodeLabs\Lucid\Provider;
 
 use Closure;
+use DecodeLabs\Lucid\Provider;
 use DecodeLabs\Lucid\Sanitizer;
 use DecodeLabs\Lucid\Validate\Result;
 
 /**
  * @template TValue
  */
-interface MultiContextProvider
+interface SingleContext extends Provider
 {
     /**
      * @param array<string, mixed>|Closure|null $setup
      */
-    public function make(
-        string $key,
+    public function as(
         string $type,
         array|Closure|null $setup = null
     ): mixed;
@@ -32,7 +32,6 @@ interface MultiContextProvider
      * @return Result<mixed>
      */
     public function validate(
-        string $key,
         string $type,
         array|Closure|null $setup = null
     ): Result;
@@ -41,13 +40,10 @@ interface MultiContextProvider
      * @param array<string, mixed>|Closure|null $setup
      */
     public function is(
-        string $key,
         string $type,
         array|Closure|null $setup = null
     ): bool;
 
-    /**
-     * @phpstan-return Sanitizer<TValue>
-     */
-    public function sanitize(string $key): Sanitizer;
+
+    public function sanitize(): Sanitizer;
 }

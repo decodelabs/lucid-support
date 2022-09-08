@@ -1,3 +1,8 @@
+## v0.2.0 (2022-09-08)
+* Reorganised to contain main Lucid interfaces
+* Updated key handling in MultiContextProvider
+* Added Sanitizer loader interfaces
+
 ## v0.1.1 (2022-09-08)
 * Removed force methods
 

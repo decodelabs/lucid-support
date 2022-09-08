@@ -7,55 +7,50 @@
 
 declare(strict_types=1);
 
-namespace DecodeLabs\Lucid\Sanitizer;
+namespace DecodeLabs\Lucid;
 
 use Closure;
-use DecodeLabs\Lucid\Sanitizer;
 use DecodeLabs\Lucid\Validate\Result;
 
-/**
- * @template TValue
- */
-interface DirectContextProvider
+interface Sanitizer
 {
     /**
-     * @template TInput
-     * @phpstan-param TInput $value
+     * Init with raw value
+     */
+    public function __construct(mixed $value);
+
+
+    /**
+     * Process value as type
+     *
      * @param array<string, mixed>|Closure|null $setup
      */
-    public function make(
-        mixed $value,
+    public function as(
         string $type,
         array|Closure|null $setup = null
     ): mixed;
 
+
     /**
-     * @template TInput
-     * @phpstan-param TInput $value
+     * Validate value as type
+     *
      * @param array<string, mixed>|Closure|null $setup
      * @return Result<mixed>
      */
     public function validate(
-        mixed $value,
         string $type,
         array|Closure|null $setup = null
     ): Result;
 
-    /**
-     * @template TInput
-     * @phpstan-param TInput $value
-     * @param array<string, mixed>|Closure|null $setup
-     */
-    public function is(
-        mixed $value,
-        string $type,
-        array|Closure|null $setup = null
-    ): bool;
 
     /**
-     * @template TInput
-     * @phpstan-param TInput $value
-     * @phpstan-return Sanitizer<TValue>
+     * Load processor for value
+     *
+     * @param array<string, mixed>|Closure|null $setup
+     * @phpstan-return Processor<mixed>
      */
-    public function sanitize(mixed $value): Sanitizer;
+    public function loadProcessor(
+        string $type,
+        array|Closure|null $setup = null
+    ): Processor;
 }
