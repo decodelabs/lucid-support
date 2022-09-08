@@ -25,7 +25,7 @@ The main library however has a substantial dependency list which may not be desi
 
 Instead, those interfaces have been sectioned off in this package with a <code>class_exists()</code> check to ensure that Lucid is available at runtime.
 
-If you want to provide Lucid's sanitisation interface in a library, you only need to require _this_ package, and implement either <code>[DirectContextProvider](./blob/develop/src/Sanitizer/DirectContextProvider.php)</code> (for passing the value directly to the methods), <code>[MultiContextProvider](./blob/develop/src/Sanitizer/MultiContextProvider.php)</code> (for dictionaries and maps) or <code>[SingleContextProvider](./blob/develop/src/Sanitizer/SingleContextProvider.php)</code> (for single-value objects).
+If you want to provide Lucid's sanitisation interface in a library, you only need to require _this_ package, and implement either <code>[DirectContextProvider](./src/Sanitizer/DirectContextProvider.php)</code> (for passing the value directly to the methods), <code>[MultiContextProvider](./src/Sanitizer/MultiContextProvider.php)</code> (for dictionaries and maps) or <code>[SingleContextProvider](./src/Sanitizer/SingleContextProvider.php)</code> (for single-value objects).
 
 For example:
 
