@@ -9,20 +9,20 @@ declare(strict_types=1);
 
 namespace DecodeLabs\Lucid\Tests;
 
-use DecodeLabs\Lucid\Provider\SingleContext;
-use DecodeLabs\Lucid\Provider\SingleContextTrait;
+use DecodeLabs\Lucid\Provider\MixedContext;
+use DecodeLabs\Lucid\Provider\MixedContextTrait;
 use DecodeLabs\Lucid\Sanitizer;
 
 /**
  * @template TValue
- * @implements SingleContext<TValue>
+ * @implements MixedContext<TValue>
  */
-class AnalyzeSingleContextProvider implements SingleContext
+class AnalyzeMixedContextProvider implements MixedContext
 {
     /**
-     * @use SingleContextTrait<TValue>
+     * @use MixedContextTrait<TValue>
      */
-    use SingleContextTrait;
+    use MixedContextTrait;
 
     /**
      * @phpstan-var TValue
@@ -40,6 +40,14 @@ class AnalyzeSingleContextProvider implements SingleContext
     public function getValue(): mixed
     {
         return $this->value;
+    }
+
+    /**
+     * @phpstan-return array<TValue>
+     */
+    public function getChildValues(): array
+    {
+        return [$this->value];
     }
 
     protected function newSanitizer(mixed $value): Sanitizer

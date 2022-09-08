@@ -9,19 +9,20 @@ declare(strict_types=1);
 
 namespace DecodeLabs\Lucid\Tests;
 
-use DecodeLabs\Lucid\Sanitizer\MultiContextProvider;
-use DecodeLabs\Lucid\Sanitizer\MultiContextProviderTrait;
+use DecodeLabs\Lucid\Provider\MultiContext;
+use DecodeLabs\Lucid\Provider\MultiContextTrait;
+use DecodeLabs\Lucid\Sanitizer;
 
 /**
  * @template TValue
- * @implements MultiContextProvider<TValue|null>
+ * @implements MultiContext<TValue|null>
  */
-class AnalyzeMultiContextProvider implements MultiContextProvider
+class AnalyzeMultiContextProvider implements MultiContext
 {
     /**
-     * @use MultiContextProviderTrait<TValue|null>
+     * @use MultiContextTrait<TValue|null>
      */
-    use MultiContextProviderTrait;
+    use MultiContextTrait;
 
     /**
      * @phpstan-var array<string, TValue>
@@ -38,13 +39,19 @@ class AnalyzeMultiContextProvider implements MultiContextProvider
     /**
      * @phpstan-return TValue|null
      */
-    public function getValue(string $key): mixed
-    {
+    public function getValue(
+        int|string $key
+    ): mixed {
         return $this->values[$key] ?? null;
+    }
+
+    protected function newSanitizer(mixed $value): Sanitizer
+    {
+        return new SanitizerImplementation($value);
     }
 }
 
 
 // Test passing an Exception through
 $test = new AnalyzeMultiContextProvider('value', new \Exception('test'));
-$test->sanitize('value')->getValue()->getCode();
+$test->sanitize('value');

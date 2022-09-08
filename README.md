@@ -32,12 +32,12 @@ For example:
 ```php
 namespace My\Library;
 
-use DecodeLabs\Lucid\Sanitizer\SingleContextProvider;
-use DecodeLabs\Lucid\Sanitizer\SingleContextProviderTrait;
+use DecodeLabs\Lucid\Provider\SingleContext;
+use DecodeLabs\Lucid\Provider\SingleContextTrait;
 
-class MyClass implements SingleContextProvider {
+class MyClass implements SingleContext {
 
-    use SingleContextProviderTrait;
+    use SingleContextTrait;
 
     protected mixed $value;
 

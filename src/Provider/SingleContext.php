@@ -7,16 +7,17 @@
 
 declare(strict_types=1);
 
-namespace DecodeLabs\Lucid\Sanitizer;
+namespace DecodeLabs\Lucid\Provider;
 
 use Closure;
+use DecodeLabs\Lucid\Provider;
 use DecodeLabs\Lucid\Sanitizer;
 use DecodeLabs\Lucid\Validate\Result;
 
 /**
  * @template TValue
  */
-interface SingleContextProvider
+interface SingleContext extends Provider
 {
     /**
      * @param array<string, mixed>|Closure|null $setup
@@ -44,8 +45,5 @@ interface SingleContextProvider
     ): bool;
 
 
-    /**
-     * @phpstan-return Sanitizer<TValue>
-     */
     public function sanitize(): Sanitizer;
 }
