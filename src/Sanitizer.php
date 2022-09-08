@@ -15,12 +15,6 @@ use DecodeLabs\Lucid\Validate\Result;
 interface Sanitizer
 {
     /**
-     * Init with raw value
-     */
-    public function __construct(mixed $value);
-
-
-    /**
      * Process value as type
      *
      * @param array<string, mixed>|Closure|null $setup
