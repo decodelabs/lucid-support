@@ -11,6 +11,7 @@ namespace DecodeLabs\Lucid\Provider;
 
 use Closure;
 use DecodeLabs\Lucid\Constraint\NotFoundException as ConstraintNotFoundException;
+use DecodeLabs\Lucid\ProviderTrait;
 use DecodeLabs\Lucid\Sanitizer;
 use DecodeLabs\Lucid\Validate\Result;
 use Exception;
@@ -20,6 +21,8 @@ use Exception;
  */
 trait SingleContextTrait
 {
+    use ProviderTrait;
+
     public function as(
         string $type,
         array|Closure|null $setup = null

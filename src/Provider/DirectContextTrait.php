@@ -11,12 +11,15 @@ namespace DecodeLabs\Lucid\Provider;
 
 use Closure;
 use DecodeLabs\Lucid\Constraint\NotFoundException as ConstraintNotFoundException;
+use DecodeLabs\Lucid\ProviderTrait;
 use DecodeLabs\Lucid\Sanitizer;
 use DecodeLabs\Lucid\Validate\Result;
 use Exception;
 
 trait DirectContextTrait
 {
+    use ProviderTrait;
+
     public function make(
         mixed $value,
         string $type,
