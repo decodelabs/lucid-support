@@ -1,4 +1,5 @@
 * Updated getChildValues() return signature
+* Updated composer check script
 
 ## v0.2.1 (2022-09-08)
 * Removed __construct() from sanitizer interface
