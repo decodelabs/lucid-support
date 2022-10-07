@@ -7,7 +7,13 @@
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-44CC11.svg?longCache=true&style=flat)](https://github.com/phpstan/phpstan)
 [![License](https://img.shields.io/packagist/l/decodelabs/lucid-support?style=flat)](https://packagist.org/packages/decodelabs/lucid-support)
 
-Support Lucid sanitisation in your libraries without the dependencies
+### Support Lucid sanitisation in your libraries without the dependencies
+
+Lucid-support is a middleware package that allows third party libraries to implement the necessary interfaces and provide custom sanitiser and validator functionality to Lucid without dragging in the full dependency tree of the main library.
+
+_Get news and updates on the [DecodeLabs blog](https://blog.decodelabs.com)._
+
+---
 
 
 ## Installation
