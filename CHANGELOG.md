@@ -1,3 +1,4 @@
+* Fixed PHP8.1 testing
 * Updated getChildValues() return signature
 * Updated composer check script
 
