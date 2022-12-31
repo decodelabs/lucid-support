@@ -3,7 +3,7 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/decodelabs/lucid-support?style=flat)](https://packagist.org/packages/decodelabs/lucid-support)
 [![Latest Version](https://img.shields.io/packagist/v/decodelabs/lucid-support.svg?style=flat)](https://packagist.org/packages/decodelabs/lucid-support)
 [![Total Downloads](https://img.shields.io/packagist/dt/decodelabs/lucid-support.svg?style=flat)](https://packagist.org/packages/decodelabs/lucid-support)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/decodelabs/lucid-support/Integrate)](https://github.com/decodelabs/lucid-support/actions/workflows/integrate.yml)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/decodelabs/lucid-support/integrate.yml?branch=develop)](https://github.com/decodelabs/lucid-support/actions/workflows/integrate.yml)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-44CC11.svg?longCache=true&style=flat)](https://github.com/phpstan/phpstan)
 [![License](https://img.shields.io/packagist/l/decodelabs/lucid-support?style=flat)](https://packagist.org/packages/decodelabs/lucid-support)
 
