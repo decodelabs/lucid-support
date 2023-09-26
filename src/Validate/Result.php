@@ -17,12 +17,12 @@ use DecodeLabs\Lucid\Processor;
 class Result
 {
     /**
-     * @phpstan-var TValue|null
+     * @var TValue|null
      */
     protected mixed $value = null;
 
     /**
-     * @phpstan-var Processor<TValue>
+     * @var Processor<TValue>
      */
     protected Processor $processor;
 
@@ -34,7 +34,7 @@ class Result
     /**
      * Init with processor
      *
-     * @phpstan-param Processor<TValue> $processor
+     * @param Processor<TValue> $processor
      */
     public function __construct(Processor $processor)
     {
@@ -45,7 +45,7 @@ class Result
     /**
      * Set value
      *
-     * @phpstan-param TValue $value
+     * @param TValue $value
      * @return $this
      */
     public function setValue(mixed $value): static
@@ -58,7 +58,7 @@ class Result
     /**
      * Get value
      *
-     * @phpstan-return TValue|null
+     * @return TValue|null
      */
     public function getValue(): mixed
     {
@@ -68,7 +68,7 @@ class Result
     /**
      * Get processor
      *
-     * @phpstan-return Processor<TValue>
+     * @return Processor<TValue>
      */
     public function getProcessor(): Processor
     {

@@ -25,7 +25,7 @@ class AnalyzeMultiContextProvider implements MultiContext
     use MultiContextTrait;
 
     /**
-     * @phpstan-var array<string, TValue>
+     * @var array<string, TValue>
      */
     protected array $values;
 
@@ -37,7 +37,7 @@ class AnalyzeMultiContextProvider implements MultiContext
     }
 
     /**
-     * @phpstan-return TValue|null
+     * @return TValue|null
      */
     public function getValue(
         int|string $key

@@ -40,15 +40,15 @@ interface Processor
     /**
      * Apply value processing before validation
      *
-     * @phpstan-param TOutput $value
-     * @phpstan-return TOutput|null
+     * @param TOutput $value
+     * @return TOutput|null
      */
     public function alterValue(mixed $value): mixed;
 
     /**
      * Coerce input to output type or null
      *
-     * @phpstan-return TOutput|null
+     * @return TOutput|null
      */
     public function coerce(mixed $value): mixed;
 
@@ -71,7 +71,7 @@ interface Processor
 
 
     /**
-     * @phpstan-return array<string, Constraint<mixed, TOutput>>
+     * @return array<string, Constraint<mixed, TOutput>>
      */
     public function prepareConstraints(): array;
 
@@ -79,7 +79,7 @@ interface Processor
     /**
      * Test constraints and yield errors in sequence
      *
-     * @phpstan-param TOutput|null $value
+     * @param TOutput|null $value
      * @return Generator<Error|null>
      */
     public function validate(mixed $value): Generator;
@@ -87,7 +87,7 @@ interface Processor
     /**
      * Test type and yield errors in sequence
      *
-     * @phpstan-param TOutput|null $value
+     * @param TOutput|null $value
      * @return Generator<Error|null>
      */
     public function validateType(mixed $value): Generator;

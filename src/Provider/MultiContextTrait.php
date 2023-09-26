@@ -60,7 +60,7 @@ trait MultiContextTrait
     }
 
     /**
-     * @phpstan-return TValue|null
+     * @return TValue|null
      */
     abstract protected function getValue(
         int|string $key

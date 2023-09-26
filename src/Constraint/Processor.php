@@ -22,7 +22,7 @@ use DecodeLabs\Lucid\ConstraintTrait;
 class Processor implements Constraint
 {
     /**
-     * @phpstan-use ConstraintTrait<TValue, TValue>
+     * @use ConstraintTrait<TValue, TValue>
      */
     use ConstraintTrait;
 

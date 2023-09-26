@@ -25,7 +25,7 @@ class AnalyzeMixedContextProvider implements MixedContext
     use MixedContextTrait;
 
     /**
-     * @phpstan-var TValue
+     * @var TValue
      */
     protected mixed $value;
 
@@ -35,7 +35,7 @@ class AnalyzeMixedContextProvider implements MixedContext
     }
 
     /**
-     * @phpstan-return TValue
+     * @return TValue
      */
     public function getValue(): mixed
     {
@@ -43,7 +43,7 @@ class AnalyzeMixedContextProvider implements MixedContext
     }
 
     /**
-     * @phpstan-return array<TValue>
+     * @return array<TValue>
      */
     public function getChildValues(): array
     {
