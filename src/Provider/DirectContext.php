@@ -18,7 +18,7 @@ interface DirectContext extends Provider
 {
     /**
      * @template TInput
-     * @phpstan-param TInput $value
+     * @param TInput $value
      * @param array<string, mixed>|Closure|null $setup
      */
     public function make(
@@ -29,7 +29,7 @@ interface DirectContext extends Provider
 
     /**
      * @template TInput
-     * @phpstan-param TInput $value
+     * @param TInput $value
      * @param array<string, mixed>|Closure|null $setup
      * @return Result<mixed>
      */
@@ -41,7 +41,7 @@ interface DirectContext extends Provider
 
     /**
      * @template TInput
-     * @phpstan-param TInput $value
+     * @param TInput $value
      * @param array<string, mixed>|Closure|null $setup
      */
     public function is(

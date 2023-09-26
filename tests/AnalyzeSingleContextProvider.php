@@ -25,7 +25,7 @@ class AnalyzeSingleContextProvider implements SingleContext
     use SingleContextTrait;
 
     /**
-     * @phpstan-var TValue
+     * @var TValue
      */
     protected mixed $value;
 
@@ -35,7 +35,7 @@ class AnalyzeSingleContextProvider implements SingleContext
     }
 
     /**
-     * @phpstan-return TValue
+     * @return TValue
      */
     public function getValue(): mixed
     {

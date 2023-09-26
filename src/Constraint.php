@@ -19,7 +19,7 @@ use Generator;
 interface Constraint
 {
     /**
-     * @phpstan-param Processor<TValue> $processor
+     * @param Processor<TValue> $processor
      */
     public function __construct(Processor $processor);
 
@@ -32,12 +32,12 @@ interface Constraint
     public function getWeight(): int;
 
     /**
-     * @phpstan-return Processor<TValue>
+     * @return Processor<TValue>
      */
     public function getProcessor(): Processor;
 
     /**
-     * @phpstan-param TParam $param
+     * @param TParam $param
      * @return $this
      */
     public function setParameter(mixed $param): static;
@@ -46,14 +46,14 @@ interface Constraint
     public function prepareValue(mixed $value): mixed;
 
     /**
-     * @phpstan-param TValue $value
-     * @phpstan-return TValue|null
+     * @param TValue $value
+     * @return TValue|null
      */
     public function alterValue(mixed $value): mixed;
 
     /**
-     * @phpstan-param TValue|null $value
-     * @phpstan-return Generator<int, Error|null, mixed, bool>
+     * @param TValue|null $value
+     * @return Generator<int, Error|null, mixed, bool>
      */
     public function validate(mixed $value): Generator;
 }

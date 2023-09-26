@@ -25,13 +25,13 @@ class Error
     protected array $params = [];
 
     /**
-     * @phpstan-var Constraint<mixed, mixed>
+     * @var Constraint<mixed, mixed>
      */
     protected Constraint $constraint;
     protected string $constraintKey;
 
     /**
-     * @phpstan-param Constraint<mixed, mixed>|Processor<mixed> $constraint
+     * @param Constraint<mixed, mixed>|Processor<mixed> $constraint
      * @param array<string, mixed> $params
      */
     public function __construct(
@@ -61,7 +61,7 @@ class Error
     }
 
     /**
-     * @phpstan-return Constraint<mixed, mixed>
+     * @return Constraint<mixed, mixed>
      */
     public function getConstraint(): Constraint
     {

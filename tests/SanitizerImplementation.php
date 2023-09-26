@@ -43,7 +43,7 @@ class SanitizerImplementation implements Sanitizer
      * Load processor for value
      *
      * @param array<string, mixed>|Closure|null $setup
-     * @phpstan-return Processor<mixed>
+     * @return Processor<mixed>
      */
     public function loadProcessor(
         string $type,

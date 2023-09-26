@@ -56,7 +56,7 @@ trait SingleContextTrait
     }
 
     /**
-     * @phpstan-return TValue
+     * @return TValue
      */
     abstract protected function getValue(): mixed;
 }

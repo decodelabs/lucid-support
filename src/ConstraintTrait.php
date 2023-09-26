@@ -19,12 +19,12 @@ use ReflectionClass;
 trait ConstraintTrait
 {
     /**
-     * @phpstan-var Processor<TValue>
+     * @var Processor<TValue>
      */
     protected Processor $processor;
 
     /**
-     * @phpstan-param Processor<TValue> $processor
+     * @param Processor<TValue> $processor
      */
     public function __construct(Processor $processor)
     {
@@ -62,7 +62,7 @@ trait ConstraintTrait
     }
 
     /**
-     * @phpstan-param TParam $param
+     * @param TParam $param
      * @return $this
      */
     public function setParameter(mixed $param): static
@@ -86,7 +86,7 @@ trait ConstraintTrait
     }
 
     /**
-     * @phpstan-param TValue $value
+     * @param TValue $value
      */
     public function validate(mixed $value): Generator
     {
