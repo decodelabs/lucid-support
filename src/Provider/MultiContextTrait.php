@@ -23,29 +23,29 @@ trait MultiContextTrait
 {
     use ProviderTrait;
 
-    public function make(
-        int|string $key,
+    public function cast(
         string $type,
+        int|string $key,
         array|Closure|null $setup = null
     ): mixed {
         return $this->sanitize($key)->as($type, $setup);
     }
 
     public function validate(
-        int|string $key,
         string $type,
+        int|string $key,
         array|Closure|null $setup = null
     ): Result {
         return $this->sanitize($key)->validate($type, $setup);
     }
 
     public function is(
-        int|string $key,
         string $type,
+        int|string $key,
         array|Closure|null $setup = null
     ): bool {
         try {
-            return $this->validate($key, $type, $setup)->isValid();
+            return $this->validate($type, $key, $setup)->isValid();
         } catch (ConstraintNotFoundException $e) {
             throw $e;
         } catch (Exception $e) {

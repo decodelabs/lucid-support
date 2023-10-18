@@ -21,9 +21,9 @@ interface DirectContext extends Provider
      * @param TInput $value
      * @param array<string, mixed>|Closure|null $setup
      */
-    public function make(
-        mixed $value,
+    public function cast(
         string $type,
+        mixed $value,
         array|Closure|null $setup = null
     ): mixed;
 
@@ -34,8 +34,8 @@ interface DirectContext extends Provider
      * @return Result<mixed>
      */
     public function validate(
-        mixed $value,
         string $type,
+        mixed $value,
         array|Closure|null $setup = null
     ): Result;
 
@@ -45,8 +45,8 @@ interface DirectContext extends Provider
      * @param array<string, mixed>|Closure|null $setup
      */
     public function is(
-        mixed $value,
         string $type,
+        mixed $value,
         array|Closure|null $setup = null
     ): bool;
 
