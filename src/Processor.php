@@ -35,7 +35,9 @@ interface Processor
     /**
      * Prepare value before coercion
      */
-    public function prepareValue(mixed $value): mixed;
+    public function prepareValue(
+        mixed $value
+    ): mixed;
 
     /**
      * Apply value processing before validation
@@ -43,14 +45,18 @@ interface Processor
      * @param TOutput $value
      * @return TOutput|null
      */
-    public function alterValue(mixed $value): mixed;
+    public function alterValue(
+        mixed $value
+    ): mixed;
 
     /**
      * Coerce input to output type or null
      *
      * @return TOutput|null
      */
-    public function coerce(mixed $value): mixed;
+    public function coerce(
+        mixed $value
+    ): mixed;
 
 
     /**
@@ -82,7 +88,9 @@ interface Processor
      * @param TOutput|null $value
      * @return Generator<Error|null>
      */
-    public function validate(mixed $value): Generator;
+    public function validate(
+        mixed $value
+    ): Generator;
 
     /**
      * Test type and yield errors in sequence
@@ -90,5 +98,7 @@ interface Processor
      * @param TOutput|null $value
      * @return Generator<Error|null>
      */
-    public function validateType(mixed $value): Generator;
+    public function validateType(
+        mixed $value
+    ): Generator;
 }

@@ -68,8 +68,9 @@ class Error
         return $this->constraint;
     }
 
-    public function setConstraintKey(string $key): void
-    {
+    public function setConstraintKey(
+        string $key
+    ): void {
         $this->constraintKey = $key;
     }
 

@@ -26,8 +26,9 @@ trait ConstraintTrait
     /**
      * @param Processor<TValue> $processor
      */
-    public function __construct(Processor $processor)
-    {
+    public function __construct(
+        Processor $processor
+    ) {
         $this->processor = $processor;
     }
 
@@ -65,8 +66,9 @@ trait ConstraintTrait
      * @param TParam $param
      * @return $this
      */
-    public function setParameter(mixed $param): static
-    {
+    public function setParameter(
+        mixed $param
+    ): static {
         return $this;
     }
 
@@ -75,21 +77,24 @@ trait ConstraintTrait
         return null;
     }
 
-    public function prepareValue(mixed $value): mixed
-    {
+    public function prepareValue(
+        mixed $value
+    ): mixed {
         return $value;
     }
 
-    public function alterValue(mixed $value): mixed
-    {
+    public function alterValue(
+        mixed $value
+    ): mixed {
         return $value;
     }
 
     /**
      * @param TValue $value
      */
-    public function validate(mixed $value): Generator
-    {
+    public function validate(
+        mixed $value
+    ): Generator {
         yield null;
         return true;
     }

@@ -50,5 +50,7 @@ interface DirectContext extends Provider
         array|Closure|null $setup = null
     ): bool;
 
-    public function sanitize(mixed $value): Sanitizer;
+    public function sanitize(
+        mixed $value
+    ): Sanitizer;
 }

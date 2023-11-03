@@ -24,7 +24,9 @@ trait MixedContextTrait
 
     public function sanitize(): Sanitizer
     {
-        return $this->newSanitizer(function (Processor $processor): mixed {
+        return $this->newSanitizer(function (
+            Processor $processor
+        ): mixed {
             if ($processor->isMultiValue()) {
                 return $this->getChildValues();
             } else {
