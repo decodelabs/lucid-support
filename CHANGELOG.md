@@ -1,3 +1,5 @@
+* Made PHP8.1 minimum version
+
 ## v0.3.0 (2023-10-18)
 * Refactored main interface methods
 
