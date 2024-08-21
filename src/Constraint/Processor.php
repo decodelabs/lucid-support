@@ -26,7 +26,7 @@ class Processor implements Constraint
      */
     use ConstraintTrait;
 
-    public const OUTPUT_TYPES = [];
+    protected const OutputTypes = [];
 
     public function getName(): string
     {

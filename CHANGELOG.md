@@ -1,3 +1,7 @@
+## v0.4.0 (2024-08-21)
+* Converted consts to protected PascalCase
+* Made PHP8.1 minimum version
+
 ## v0.3.0 (2023-10-18)
 * Refactored main interface methods
 

@@ -36,8 +36,9 @@ class Result
      *
      * @param Processor<TValue> $processor
      */
-    public function __construct(Processor $processor)
-    {
+    public function __construct(
+        Processor $processor
+    ) {
         $this->processor = $processor;
     }
 
@@ -48,8 +49,9 @@ class Result
      * @param TValue $value
      * @return $this
      */
-    public function setValue(mixed $value): static
-    {
+    public function setValue(
+        mixed $value
+    ): static {
         $this->value = $value;
         return $this;
     }
@@ -98,8 +100,9 @@ class Result
      *
      * @return $this;
      */
-    public function addError(Error $error): static
-    {
+    public function addError(
+        Error $error
+    ): static {
         $this->errors[$error->getId()] = $error;
         return $this;
     }

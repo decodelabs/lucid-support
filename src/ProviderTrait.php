@@ -14,8 +14,9 @@ use DecodeLabs\Lucid;
 
 trait ProviderTrait
 {
-    protected function newSanitizer(mixed $value): Sanitizer
-    {
+    protected function newSanitizer(
+        mixed $value
+    ): Sanitizer {
         if (!class_exists(Lucid::class)) {
             throw Exceptional::ComponentUnavailable(
                 'DecodeLabs/Lucid package is required for sanitisation'

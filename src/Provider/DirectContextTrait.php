@@ -50,8 +50,9 @@ trait DirectContextTrait
         }
     }
 
-    public function sanitize(mixed $value): Sanitizer
-    {
+    public function sanitize(
+        mixed $value
+    ): Sanitizer {
         return $this->newSanitizer($value);
     }
 }
