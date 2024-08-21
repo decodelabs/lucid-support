@@ -1,3 +1,4 @@
+* Converted consts to protected PascalCase
 * Made PHP8.1 minimum version
 
 ## v0.3.0 (2023-10-18)

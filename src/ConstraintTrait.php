@@ -35,12 +35,12 @@ trait ConstraintTrait
     public static function getProcessorOutputTypes(): ?array
     {
         if (
-            defined('static::OUTPUT_TYPES') &&
+            defined('static::OutputTypes') &&
             /** @phpstan-ignore-next-line */
-            is_array(static::OUTPUT_TYPES)
+            is_array(static::OutputTypes)
         ) {
             /** @phpstan-ignore-next-line */
-            return static::OUTPUT_TYPES;
+            return static::OutputTypes;
         }
 
         return null;
