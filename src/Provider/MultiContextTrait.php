@@ -18,6 +18,7 @@ use Exception;
 
 /**
  * @template TValue
+ * @phpstan-require-implements MultiContext<TValue>
  */
 trait MultiContextTrait
 {

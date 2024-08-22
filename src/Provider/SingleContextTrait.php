@@ -18,6 +18,7 @@ use Exception;
 
 /**
  * @template TValue
+ * @phpstan-require-implements SingleContext<TValue>
  */
 trait SingleContextTrait
 {

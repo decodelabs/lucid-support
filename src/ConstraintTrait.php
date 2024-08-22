@@ -15,6 +15,7 @@ use ReflectionClass;
 /**
  * @template TParam
  * @template TValue
+ * @phpstan-require-implements Constraint<TParam, TValue>
  */
 trait ConstraintTrait
 {
