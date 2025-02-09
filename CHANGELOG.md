@@ -1,4 +1,5 @@
 * Added @phpstan-require-implements constraints
+* Added PHP8.4 to CI workflow
 
 ## v0.4.0 (2024-08-21)
 * Converted consts to protected PascalCase
