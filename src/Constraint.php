@@ -21,9 +21,9 @@ interface Constraint
     public const int Weight = 10;
 
     /**
-     * @var ?list<string>
+     * @var list<string>
      */
-    public const ?array OutputTypes = null;
+    public const array OutputTypes = [];
 
     public string $name { get; }
     public int $weight { get; }
