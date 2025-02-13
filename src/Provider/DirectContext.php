@@ -19,7 +19,7 @@ interface DirectContext extends Provider
     /**
      * @template TInput
      * @param TInput $value
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      */
     public function cast(
         string $type,
@@ -30,7 +30,7 @@ interface DirectContext extends Provider
     /**
      * @template TInput
      * @param TInput $value
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      * @return Result<mixed>
      */
     public function validate(
@@ -42,7 +42,7 @@ interface DirectContext extends Provider
     /**
      * @template TInput
      * @param TInput $value
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      */
     public function is(
         string $type,

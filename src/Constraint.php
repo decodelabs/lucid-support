@@ -18,6 +18,26 @@ use Generator;
  */
 interface Constraint
 {
+    public const int Weight = 10;
+
+    /**
+     * @var ?list<string>
+     */
+    public const ?array OutputTypes = null;
+
+    public string $name { get; }
+    public int $weight { get; }
+
+    /**
+     * @var TParam
+     */
+    public mixed $parameter { get; set; }
+
+    /**
+     * @var Processor<TValue>
+     */
+    public Processor $processor { get; }
+
     /**
      * @param Processor<TValue> $processor
      */
@@ -26,27 +46,9 @@ interface Constraint
     );
 
     /**
-     * @return array<string>|null
+     * @return ?list<string>
      */
     public static function getProcessorOutputTypes(): ?array;
-
-    public function getName(): string;
-    public function getWeight(): int;
-
-    /**
-     * @return Processor<TValue>
-     */
-    public function getProcessor(): Processor;
-
-    /**
-     * @param TParam $param
-     * @return $this
-     */
-    public function setParameter(
-        mixed $param
-    ): static;
-
-    public function getParameter(): mixed;
 
     public function prepareValue(
         mixed $value

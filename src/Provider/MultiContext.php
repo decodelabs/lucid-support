@@ -20,7 +20,7 @@ use DecodeLabs\Lucid\Validate\Result;
 interface MultiContext extends Provider
 {
     /**
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      */
     public function cast(
         string $type,
@@ -29,7 +29,7 @@ interface MultiContext extends Provider
     ): mixed;
 
     /**
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      * @return Result<mixed>
      */
     public function validate(
@@ -39,7 +39,7 @@ interface MultiContext extends Provider
     ): Result;
 
     /**
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      */
     public function is(
         string $type,

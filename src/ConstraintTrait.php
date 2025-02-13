@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace DecodeLabs\Lucid;
 
 use Generator;
+use Reflection;
 use ReflectionClass;
 
 /**
@@ -19,10 +20,25 @@ use ReflectionClass;
  */
 trait ConstraintTrait
 {
+    public string $name {
+        get => $this->getName();
+    }
+
+    public int $weight {
+        get => static::Weight;
+    }
+
+    /**
+     * @var TParam
+     */
+    public mixed $parameter = null {
+        set => $this->validateParameter($value);
+    }
+
     /**
      * @var Processor<TValue>
      */
-    protected Processor $processor;
+    protected(set) Processor $processor;
 
     /**
      * @param Processor<TValue> $processor
@@ -35,48 +51,23 @@ trait ConstraintTrait
 
     public static function getProcessorOutputTypes(): ?array
     {
-        if (
-            defined('static::OutputTypes') &&
-            /** @phpstan-ignore-next-line */
-            is_array(static::OutputTypes)
-        ) {
-            /** @phpstan-ignore-next-line */
-            return static::OutputTypes;
-        }
-
-        return null;
+        return static::OutputTypes;
     }
 
-    public function getName(): string
-    {
-        return (new ReflectionClass($this))
-            ->getShortName();
-    }
-
-    public function getWeight(): int
-    {
-        return 10;
-    }
-
-    public function getProcessor(): Processor
-    {
-        return $this->processor;
+    protected function getName(): string {
+        return new ReflectionClass($this)->getShortName();
     }
 
     /**
-     * @param TParam $param
-     * @return $this
+     * @param TParam $parameter
+     * @return TParam
      */
-    public function setParameter(
-        mixed $param
-    ): static {
-        return $this;
+    protected function validateParameter(
+        mixed $parameter
+    ): mixed {
+        return $parameter;
     }
 
-    public function getParameter(): mixed
-    {
-        return null;
-    }
 
     public function prepareValue(
         mixed $value

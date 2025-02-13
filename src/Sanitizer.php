@@ -17,7 +17,7 @@ interface Sanitizer
     /**
      * Process value as type
      *
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      */
     public function as(
         string $type,
@@ -28,7 +28,7 @@ interface Sanitizer
     /**
      * Validate value as type
      *
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      * @return Result<mixed>
      */
     public function validate(
@@ -40,7 +40,7 @@ interface Sanitizer
     /**
      * Load processor for value
      *
-     * @param array<string, mixed>|Closure|null $setup
+     * @param array<string,mixed>|Closure|null $setup
      * @return Processor<mixed>
      */
     public function loadProcessor(
