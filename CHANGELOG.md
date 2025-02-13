@@ -1,3 +1,6 @@
+## v0.5.1 (2025-02-13)
+* Fixed OutputTypes handling
+
 ## v0.5.0 (2025-02-13)
 * Replaced accessors with property hooks
 * Added @phpstan-require-implements constraints

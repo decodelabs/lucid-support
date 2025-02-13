@@ -51,7 +51,9 @@ trait ConstraintTrait
 
     public static function getProcessorOutputTypes(): ?array
     {
-        return static::OutputTypes;
+        return empty(static::OutputTypes) ?
+            null :
+            static::OutputTypes;
     }
 
     protected function getName(): string {

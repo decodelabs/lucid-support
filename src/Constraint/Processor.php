@@ -28,7 +28,7 @@ class Processor implements Constraint
 
     public const int Weight = 1;
 
-    public const ?array OutputTypes = null;
+    public const array OutputTypes = [];
 
     protected function getName(): string
     {
