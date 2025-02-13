@@ -19,12 +19,12 @@ class Result
     /**
      * @var TValue|null
      */
-    protected mixed $value = null;
+    protected(set) mixed $value = null;
 
     /**
      * @var Processor<TValue>
      */
-    protected Processor $processor;
+    protected(set) Processor $processor;
 
     /**
      * @var array<Error>
@@ -44,46 +44,11 @@ class Result
 
 
     /**
-     * Set value
-     *
-     * @param TValue $value
-     * @return $this
-     */
-    public function setValue(
-        mixed $value
-    ): static {
-        $this->value = $value;
-        return $this;
-    }
-
-
-    /**
-     * Get value
-     *
-     * @return TValue|null
-     */
-    public function getValue(): mixed
-    {
-        return $this->value;
-    }
-
-    /**
-     * Get processor
-     *
-     * @return Processor<TValue>
-     */
-    public function getProcessor(): Processor
-    {
-        return $this->processor;
-    }
-
-
-    /**
      * Get type name
      */
     public function getType(): string
     {
-        return $this->processor->getName();
+        return $this->processor->name;
     }
 
 
@@ -98,12 +63,12 @@ class Result
     /**
      * Add error
      *
-     * @return $this;
+     * @return $this
      */
     public function addError(
         Error $error
     ): static {
-        $this->errors[$error->getId()] = $error;
+        $this->errors[$error->id] = $error;
         return $this;
     }
 

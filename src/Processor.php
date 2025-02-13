@@ -17,14 +17,19 @@ use Generator;
  */
 interface Processor
 {
-    public function __construct(Sanitizer $sanitizer);
+    /** @var list<string> */
+    public const array OutputTypes = [];
 
     /**
-     * @return array<string>
+     * @var list<string>
      */
-    public function getOutputTypes(): array;
+    public array $outputTypes { get; }
 
-    public function getName(): string;
+    public string $name { get; }
+
+
+    public function __construct(Sanitizer $sanitizer);
+
     public function getSanitizer(): Sanitizer;
 
     /**

@@ -28,14 +28,18 @@ class SanitizerImplementation implements Sanitizer
         string $type,
         array|Closure|null $setup = null
     ): mixed {
-        throw Exceptional::NotImplemented('This is not implemented');
+        throw Exceptional::NotImplemented(
+            message: 'This is not implemented'
+        );
     }
 
     public function validate(
         string $type,
         array|Closure|null $setup = null
     ): Result {
-        throw Exceptional::NotImplemented('This is not implemented');
+        throw Exceptional::NotImplemented(
+            message: 'This is not implemented'
+        );
     }
 
 
@@ -49,6 +53,8 @@ class SanitizerImplementation implements Sanitizer
         string $type,
         array|Closure|null $setup = null
     ): Processor {
-        throw Exceptional::NotImplemented('This is not implemented');
+        throw Exceptional::NotImplemented(
+            message: 'This is not implemented'
+        );
     }
 }

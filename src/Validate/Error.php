@@ -16,29 +16,33 @@ use DecodeLabs\Lucid\Processor;
 
 class Error
 {
-    protected mixed $value;
-    protected string $message;
+    public string $id {
+        get => md5($this->constraintKey . ':' . $this->messageTemplate);
+    }
+
+    protected(set) mixed $value;
+    protected(set) string $messageTemplate;
 
     /**
      * @var array<string, mixed>
      */
-    protected array $params = [];
+    protected(set) array $parameters = [];
 
     /**
      * @var Constraint<mixed, mixed>
      */
-    protected Constraint $constraint;
-    protected string $constraintKey;
+    protected(set) Constraint $constraint;
+    protected(set) string $constraintKey;
 
     /**
      * @param Constraint<mixed, mixed>|Processor<mixed> $constraint
-     * @param array<string, mixed> $params
+     * @param array<string, mixed> $parameters
      */
     public function __construct(
         Constraint|Processor $constraint,
         mixed $value,
-        string $message,
-        array $params = []
+        string $messageTemplate,
+        array $parameters = []
     ) {
         if ($constraint instanceof Processor) {
             $constraint = new ProcessorConstraint($constraint);
@@ -46,58 +50,23 @@ class Error
 
         $this->constraint = $constraint;
         $this->value = $value;
-        $this->message = $message;
-        $this->params = $params;
+        $this->messageTemplate = $messageTemplate;
+        $this->parameters = $parameters;
 
         $this->constraintKey = lcfirst(
-            $this->constraint->getName()
+            $this->constraint->name
         );
-    }
-
-
-    public function getId(): string
-    {
-        return md5($this->constraintKey . ':' . $this->message);
-    }
-
-    /**
-     * @return Constraint<mixed, mixed>
-     */
-    public function getConstraint(): Constraint
-    {
-        return $this->constraint;
-    }
-
-    public function setConstraintKey(
-        string $key
-    ): void {
-        $this->constraintKey = $key;
-    }
-
-    public function getConstraintKey(): string
-    {
-        return $this->constraintKey;
     }
 
     public function getProcessorName(): string
     {
-        return $this->constraint->getProcessor()->getName();
-    }
-
-    public function getValue(): mixed
-    {
-        return $this->value;
-    }
-
-    public function getMessageTemplate(): string
-    {
-        return $this->message;
+        return $this->constraint->processor->name;
     }
 
     public function getMessage(): string
     {
-        $output = $this->message;
-        $params = $this->params;
+        $output = $this->messageTemplate;
+        $parameters = $this->parameters;
 
         // Type
         if (false !== strstr($output, '%type%')) {
@@ -107,16 +76,16 @@ class Error
                 $type = substr($type, 0, -6);
             }
 
-            $params['type'] = $type;
+            $parameters['type'] = $type;
         }
 
         // Param
-        $key = $this->getConstraintKey();
-        $params[$key] = $this->constraint->getParameter();
+        $key = $this->constraintKey;
+        $parameters[$key] = $this->constraint->parameter;
 
 
         // Replace
-        foreach ($params as $key => $param) {
+        foreach ($parameters as $key => $param) {
             $output = str_replace(
                 '%' . $key . '%',
                 Coercion::forceString($param),
@@ -125,14 +94,5 @@ class Error
         }
 
         return $output;
-    }
-
-
-    /**
-     * @return array<string, mixed>
-     */
-    public function getParams(): array
-    {
-        return $this->params;
     }
 }

@@ -18,7 +18,7 @@ interface MixedContext extends SingleContext
     /**
      * Get list of interal values
      *
-     * @return array<int|string, TValue|array<mixed>|null>
+     * @return array<int|string,TValue|array<mixed>|null>
      */
     public function getChildValues(): array;
 }

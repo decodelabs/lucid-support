@@ -16,6 +16,9 @@ use DecodeLabs\Lucid\Sanitizer;
 use DecodeLabs\Lucid\Validate\Result;
 use Exception;
 
+/**
+ * @phpstan-require-implements DirectContext
+ */
 trait DirectContextTrait
 {
     use ProviderTrait;

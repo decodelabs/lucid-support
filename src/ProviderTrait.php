@@ -12,6 +12,9 @@ namespace DecodeLabs\Lucid;
 use DecodeLabs\Exceptional;
 use DecodeLabs\Lucid;
 
+/**
+ * @phpstan-require-implements Provider
+ */
 trait ProviderTrait
 {
     protected function newSanitizer(
@@ -19,7 +22,7 @@ trait ProviderTrait
     ): Sanitizer {
         if (!class_exists(Lucid::class)) {
             throw Exceptional::ComponentUnavailable(
-                'DecodeLabs/Lucid package is required for sanitisation'
+                message: 'DecodeLabs/Lucid package is required for sanitisation'
             );
         }
 

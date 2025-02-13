@@ -14,6 +14,7 @@ use DecodeLabs\Lucid\Sanitizer;
 
 /**
  * @template TValue
+ * @phpstan-require-implements MixedContext<TValue>
  */
 trait MixedContextTrait
 {

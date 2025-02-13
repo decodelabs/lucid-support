@@ -22,19 +22,16 @@ use DecodeLabs\Lucid\ConstraintTrait;
 class Processor implements Constraint
 {
     /**
-     * @use ConstraintTrait<TValue, TValue>
+     * @use ConstraintTrait<TValue,TValue>
      */
     use ConstraintTrait;
 
-    protected const OutputTypes = [];
+    public const int Weight = 1;
 
-    public function getName(): string
-    {
-        return $this->processor->getName();
-    }
+    public const ?array OutputTypes = null;
 
-    public function getWeight(): int
+    protected function getName(): string
     {
-        return 1;
+        return $this->processor->name;
     }
 }
