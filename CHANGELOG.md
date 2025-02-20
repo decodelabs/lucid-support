@@ -1,3 +1,6 @@
+## v0.5.2 (2025-02-20)
+* Upgraded Coercion dependency
+
 ## v0.5.1 (2025-02-13)
 * Fixed OutputTypes handling
 

@@ -88,7 +88,7 @@ class Error
         foreach ($parameters as $key => $param) {
             $output = str_replace(
                 '%' . $key . '%',
-                Coercion::forceString($param),
+                Coercion::toString($param),
                 $output
             );
         }
