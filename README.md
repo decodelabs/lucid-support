@@ -11,8 +11,6 @@
 
 Lucid-support is a middleware package that allows third party libraries to implement the necessary interfaces and provide custom sanitiser and validator functionality to Lucid without dragging in the full dependency tree of the main library.
 
-_Get news and updates on the [DecodeLabs blog](https://blog.decodelabs.com)._
-
 ---
 
 
