@@ -1,42 +1,99 @@
-## v0.5.2 (2025-02-20)
-* Upgraded Coercion dependency
+# Changelog
 
-## v0.5.1 (2025-02-13)
-* Fixed OutputTypes handling
+All notable changes to this project will be documented in this file.<br>
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v0.5.0 (2025-02-13)
-* Replaced accessors with property hooks
-* Added @phpstan-require-implements constraints
-* Upgraded PHPStan to v2
-* Tidied boolean logic
-* Fixed Exceptional syntax
-* Added PHP8.4 to CI workflow
-* Made PHP8.4 minimum version
+### Unreleased
+--
 
-## v0.4.0 (2024-08-21)
-* Converted consts to protected PascalCase
-* Made PHP8.1 minimum version
+---
 
-## v0.3.0 (2023-10-18)
-* Refactored main interface methods
+### [v0.5.2](https://github.com/decodelabs/lucid-support/commits/v0.5.2) - 20th February 2025
 
-## v0.2.2 (2023-09-26)
-* Converted phpstan doc comments to generic
-* Migrated to use effigy in CI workflow
-* Fixed PHP8.1 testing
-* Updated getChildValues() return signature
-* Updated composer check script
+- Upgraded Coercion dependency
 
-## v0.2.1 (2022-09-08)
-* Removed __construct() from sanitizer interface
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.5.1...v0.5.2)
 
-## v0.2.0 (2022-09-08)
-* Reorganised to contain main Lucid interfaces
-* Updated key handling in MultiContextProvider
-* Added Sanitizer loader interfaces
+---
 
-## v0.1.1 (2022-09-08)
-* Removed force methods
+### [v0.5.1](https://github.com/decodelabs/lucid-support/commits/v0.5.1) - 13th February 2025
 
-## v0.1.0 (2022-09-08)
-* Ported initial codebase from Lucid
+- Fixed OutputTypes handling
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.5.0...v0.5.1)
+
+---
+
+### [v0.5.0](https://github.com/decodelabs/lucid-support/commits/v0.5.0) - 13th February 2025
+
+- Replaced accessors with property hooks
+- Added @phpstan-require-implements constraints
+- Upgraded PHPStan to v2
+- Tidied boolean logic
+- Fixed Exceptional syntax
+- Added PHP8.4 to CI workflow
+- Made PHP8.4 minimum version
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.4.0...v0.5.0)
+
+---
+
+### [v0.4.0](https://github.com/decodelabs/lucid-support/commits/v0.4.0) - 21st August 2024
+
+- Converted consts to protected PascalCase
+- Made PHP8.1 minimum version
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.3.0...v0.4.0)
+
+---
+
+### [v0.3.0](https://github.com/decodelabs/lucid-support/commits/v0.3.0) - 18th October 2023
+
+- Refactored main interface methods
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.2.2...v0.3.0)
+
+---
+
+### [v0.2.2](https://github.com/decodelabs/lucid-support/commits/v0.2.2) - 26th September 2023
+
+- Converted phpstan doc comments to generic
+- Migrated to use effigy in CI workflow
+- Fixed PHP8.1 testing
+- Updated getChildValues() return signature
+- Updated composer check script
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.2.1...v0.2.2)
+
+---
+
+### [v0.2.1](https://github.com/decodelabs/lucid-support/commits/v0.2.1) - 8th September 2022
+
+- Removed __construct() from sanitizer interface
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.2.0...v0.2.1)
+
+---
+
+### [v0.2.0](https://github.com/decodelabs/lucid-support/commits/v0.2.0) - 8th September 2022
+
+- Reorganised to contain main Lucid interfaces
+- Updated key handling in MultiContextProvider
+- Added Sanitizer loader interfaces
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.1.1...v0.2.0)
+
+---
+
+### [v0.1.1](https://github.com/decodelabs/lucid-support/commits/v0.1.1) - 8th September 2022
+
+- Removed force methods
+
+[Full list of changes](https://github.com/decodelabs/lucid-support/compare/v0.1.0...v0.1.1)
+
+---
+
+### [v0.1.0](https://github.com/decodelabs/lucid-support/commits/v0.1.0) - 8th September 2022
+
+- Ported initial codebase from Lucid
