@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace DecodeLabs\Lucid;
 
 use Generator;
-use Reflection;
 use ReflectionClass;
 
 /**
@@ -38,7 +37,7 @@ trait ConstraintTrait
     /**
      * @var Processor<TValue>
      */
-    protected(set) Processor $processor;
+    public protected(set) Processor $processor;
 
     /**
      * @param Processor<TValue> $processor
@@ -56,7 +55,8 @@ trait ConstraintTrait
             static::OutputTypes;
     }
 
-    protected function getName(): string {
+    protected function getName(): string
+    {
         return new ReflectionClass($this)->getShortName();
     }
 

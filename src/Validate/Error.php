@@ -20,19 +20,19 @@ class Error
         get => md5($this->constraintKey . ':' . $this->messageTemplate);
     }
 
-    protected(set) mixed $value;
-    protected(set) string $messageTemplate;
+    public protected(set) mixed $value;
+    public protected(set) string $messageTemplate;
 
     /**
      * @var array<string, mixed>
      */
-    protected(set) array $parameters = [];
+    public protected(set) array $parameters = [];
 
     /**
      * @var Constraint<mixed, mixed>
      */
-    protected(set) Constraint $constraint;
-    protected(set) string $constraintKey;
+    public protected(set) Constraint $constraint;
+    public protected(set) string $constraintKey;
 
     /**
      * @param Constraint<mixed, mixed>|Processor<mixed> $constraint

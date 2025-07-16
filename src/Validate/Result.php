@@ -19,12 +19,12 @@ class Result
     /**
      * @var TValue|null
      */
-    protected(set) mixed $value = null;
+    public protected(set) mixed $value = null;
 
     /**
      * @var Processor<TValue>
      */
-    protected(set) Processor $processor;
+    public protected(set) Processor $processor;
 
     /**
      * @var array<Error>
