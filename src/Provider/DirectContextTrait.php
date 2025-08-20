@@ -24,28 +24,28 @@ trait DirectContextTrait
     use ProviderTrait;
 
     public function cast(
-        string $type,
         mixed $value,
+        string $type,
         array|Closure|null $setup = null
     ): mixed {
         return $this->sanitize($value)->as($type, $setup);
     }
 
     public function validate(
-        string $type,
         mixed $value,
+        string $type,
         array|Closure|null $setup = null
     ): Result {
         return $this->sanitize($value)->validate($type, $setup);
     }
 
     public function is(
-        string $type,
         mixed $value,
+        string $type,
         array|Closure|null $setup = null
     ): bool {
         try {
-            return $this->validate($type, $value, $setup)->isValid();
+            return $this->validate($value, $type, $setup)->isValid();
         } catch (ConstraintNotFoundException $e) {
             throw $e;
         } catch (Exception $e) {

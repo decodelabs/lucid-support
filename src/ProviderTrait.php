@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace DecodeLabs\Lucid;
 
 use DecodeLabs\Exceptional;
-use DecodeLabs\Lucid;
+use DecodeLabs\Lucid\Sanitizer\ValueContainer;
 
 /**
  * @phpstan-require-implements Provider
@@ -20,12 +20,12 @@ trait ProviderTrait
     protected function newSanitizer(
         mixed $value
     ): Sanitizer {
-        if (!class_exists(Lucid::class)) {
+        if (!class_exists(ValueContainer::class)) {
             throw Exceptional::ComponentUnavailable(
                 message: 'DecodeLabs/Lucid package is required for sanitisation'
             );
         }
 
-        return Lucid::newSanitizer($value);
+        return new ValueContainer($value);
     }
 }

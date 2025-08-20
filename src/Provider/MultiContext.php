@@ -23,8 +23,8 @@ interface MultiContext extends Provider
      * @param array<string,mixed>|Closure|null $setup
      */
     public function cast(
-        string $type,
         int|string $key,
+        string $type,
         array|Closure|null $setup = null
     ): mixed;
 
@@ -33,8 +33,8 @@ interface MultiContext extends Provider
      * @return Result<mixed>
      */
     public function validate(
-        string $type,
         int|string $key,
+        string $type,
         array|Closure|null $setup = null
     ): Result;
 
@@ -42,8 +42,8 @@ interface MultiContext extends Provider
      * @param array<string,mixed>|Closure|null $setup
      */
     public function is(
-        string $type,
         int|string $key,
+        string $type,
         array|Closure|null $setup = null
     ): bool;
 
