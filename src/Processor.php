@@ -32,21 +32,13 @@ interface Processor
 
     public function getSanitizer(): Sanitizer;
 
-    /**
-     * Does this processor require a list of values?
-     */
     public function isMultiValue(): bool;
 
-    /**
-     * Prepare value before coercion
-     */
     public function prepareValue(
         mixed $value
     ): mixed;
 
     /**
-     * Apply value processing before validation
-     *
      * @param TOutput $value
      * @return TOutput|null
      */
@@ -55,8 +47,6 @@ interface Processor
     ): mixed;
 
     /**
-     * Coerce input to output type or null
-     *
      * @return TOutput|null
      */
     public function coerce(
@@ -65,8 +55,6 @@ interface Processor
 
 
     /**
-     * Test validity of constraint
-     *
      * @return $this
      */
     public function test(
@@ -88,8 +76,6 @@ interface Processor
 
 
     /**
-     * Test constraints and yield errors in sequence
-     *
      * @param TOutput|null $value
      * @return Generator<Error|null>
      */
@@ -98,8 +84,6 @@ interface Processor
     ): Generator;
 
     /**
-     * Test type and yield errors in sequence
-     *
      * @param TOutput|null $value
      * @return Generator<Error|null>
      */

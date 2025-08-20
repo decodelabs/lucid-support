@@ -43,26 +43,18 @@ class Result
     }
 
 
-    /**
-     * Get type name
-     */
     public function getType(): string
     {
         return $this->processor->name;
     }
 
 
-    /**
-     * Is valid
-     */
     public function isValid(): bool
     {
         return empty($this->errors);
     }
 
     /**
-     * Add error
-     *
      * @return $this
      */
     public function addError(
@@ -73,8 +65,6 @@ class Result
     }
 
     /**
-     * Get errors
-     *
      * @return array<Error>
      */
     public function getErrors(): array
@@ -82,17 +72,11 @@ class Result
         return array_values($this->errors);
     }
 
-    /**
-     * Has errors
-     */
     public function hasErrors(): bool
     {
         return !empty($this->errors);
     }
 
-    /**
-     * Count errors
-     */
     public function countErrors(): int
     {
         return count($this->errors);

@@ -15,8 +15,6 @@ use DecodeLabs\Lucid\Validate\Result;
 interface Sanitizer
 {
     /**
-     * Process value as type
-     *
      * @param array<string,mixed>|Closure|null $setup
      */
     public function as(
@@ -26,8 +24,6 @@ interface Sanitizer
 
 
     /**
-     * Validate value as type
-     *
      * @param array<string,mixed>|Closure|null $setup
      * @return Result<mixed>
      */
@@ -38,8 +34,6 @@ interface Sanitizer
 
 
     /**
-     * Load processor for value
-     *
      * @param array<string,mixed>|Closure|null $setup
      * @return Processor<mixed>
      */
